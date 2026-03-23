@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/index.js",
     "dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node\" src/index.ts",
-    "build": "rimraf ./build && tsc && shx chmod +x build/index.js",
+    "build": "rimraf ./build && tsc && shx chmod +x build/index.js && cp -r src/catalog/swagger build/catalog/swagger",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write \"src/**/*.ts\""
@@ -52,8 +52,4 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
-  "scripts": {
-  "build": "tsc && cp -r src/catalog/swagger build/catalog/swagger",
-  "start": "node build/index.js"
-}
 }

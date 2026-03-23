@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/index.js",
     "dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node\" src/index.ts",
-    "build": "rimraf ./build && tsc && shx chmod +x build/index.js && cp -r src/catalog/swagger build/catalog/swagger",
+    "build": "rimraf ./build && tsc && shx chmod +x build/index.js && git clone --depth 1 https://github.com/amzn/selling-partner-api-models.git /tmp/sp-api-models && cp -r /tmp/sp-api-models/models build/swagger",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write \"src/**/*.ts\""
